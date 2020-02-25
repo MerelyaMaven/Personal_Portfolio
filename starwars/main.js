@@ -1,5 +1,6 @@
 import {films} from '../dat/films.js'
 import {people} from '../data/people.js'
+import {starships} from '../data/starships.js'
 
 const greetingDiv = documetn.querySelector('.greeting')
 
@@ -11,11 +12,20 @@ people.forEach(person => {
 let listItem = textContent = person.name
 listItem.textContentn = person.name
 castList.appendChild(listItem)
-})
+
+let anchorWrap =document.createElement("a")
+anchorwrap.href = "#"
 
 let imageItem = document.createElement ("img")
 imageItem.scr = "https://starwars-visualguide.com/#/characters/${counter}.jpg"
-imageItem.appendChild(listItem)
+
+//add some way to handle clicks on image
+imageItem.addEventListener("click", () => {
+    console.log("it worked")
+})
+anchorWrap.appendChild(imageItem)
+greetingDiv.appendChild(anchorWrap)
 counter++
+})
 
 greetingDiv.appendChild(castList)
