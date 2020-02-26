@@ -2,7 +2,7 @@ import {films} from '../dat/films.js'
 import {people} from '../data/people.js'
 import {starships} from '../data/starships.js'
 
-const greetingDiv = documetn.querySelector('.greeting')
+const greetingDiv = document.querySelector('.greeting')
 
 const castList = document.createElement("ul")
 
