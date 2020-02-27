@@ -3,29 +3,26 @@ import {people} from '../data/people.js'
 import {starships} from '../data/starships.js'
 
 const greetingDiv = document.querySelector('.greeting')
+const maleButton = document.querySelector('#maleButton')
+const femaleButton = document.querySelector('#femaleButton')
+const otherButton = document.querySelector('#otherButton')
 
-const castList = document.createElement("ul")
-
+const maleCharacters = people.filter(person => person.gender ==="male")
+console.log(maleCharacters)
 let counter = 1
 
 people.forEach(person => {
-let listItem = textContent = person.name
-listItem.textContentn = person.name
-castList.appendChild(listItem)
-
-let anchorWrap =document.createElement("a")
+let anchorWrap = document.createElement("a")
 anchorwrap.href = "#"
 
-let imageItem = document.createElement ("img")
-imageItem.scr = "https://starwars-visualguide.com/#/characters/${counter}.jpg"
+let imageItem = document.createElement("img")
+imageItem.src = `https://starwars-visualguide.com/assets/img/character/${counter}.jpg`
 
 //add some way to handle clicks on image
-imageItem.addEventListener("click", () => {
-    console.log("it worked")
+imageItem.addEventListener("click", (event) => {
+    console.log(event)
 })
 anchorWrap.appendChild(imageItem)
 greetingDiv.appendChild(anchorWrap)
 counter++
 })
-
-greetingDiv.appendChild(castList)
