@@ -8,9 +8,14 @@ const femaleButton = document.querySelector('#femaleButton')
 const otherButton = document.querySelector('#otherButton')
 
 const maleCharacters = people.filter(person => person.gender ==="male")
-console.log(maleCharacters)
+populateDOM(maleCharacters)
+
+const femaleCharacters = people.filter(person => person.gender ==="female")
+console.log(femaleCharacters.lenth)
+
 let counter = 1
 
+function populateDOM(){
 people.forEach(person => {
 let anchorWrap = document.createElement("a")
 anchorwrap.href = "#"
@@ -26,3 +31,8 @@ anchorWrap.appendChild(imageItem)
 greetingDiv.appendChild(anchorWrap)
 counter++
 })
+
+maleButton.addEventListener("click", (event) => {
+    console.log("clicked on maleButton")
+})
+}
