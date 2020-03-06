@@ -1,6 +1,6 @@
 import {films} from '../dat/films.js'
 import {people} from '../data/people.js'
-import {starships} from '../data/starships.js'
+
 
 const greetingDiv = document.querySelector('.greeting')
 const maleButton = document.querySelector('#maleButton')
@@ -35,4 +35,9 @@ counter++
 maleButton.addEventListener("click", (event) => {
     console.log("clicked on maleButton")
 })
+}
+funtion removeChildren(){
+    while (element.firstChild){
+        element.removeChild(element.firstChild);
+    }
 }
