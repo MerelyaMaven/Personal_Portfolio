@@ -1,5 +1,7 @@
 .root {
-    --main-grey: #0f0f0f;
+    --main-grey:#0f0f0f;
+    --main-pink:#0c0c0c;
+    --main-white: #efefef;
 }
 
 * {
