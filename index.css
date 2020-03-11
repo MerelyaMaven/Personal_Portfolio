@@ -55,6 +55,9 @@ body {
     flex-wrap: wrap;
     
 }
+#project-list a {
+    text-decoration: none;
+}
 figcaption {
     text-align: center;
 }
