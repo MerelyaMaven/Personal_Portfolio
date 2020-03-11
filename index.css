@@ -3,7 +3,9 @@
     --main-pink:#0c0c0c;
     --main-white: #efefef;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
