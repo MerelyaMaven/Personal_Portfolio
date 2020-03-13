@@ -2,7 +2,7 @@ import {starships} from '../data/starships.js'
 
 const nav = document.querySelector('.nav')
 
-const navList = document.querySelector('navList')
+const navList = document.querySelector('.navList')
 
 function populateNav(starships) {
     starships.forEach(starship => {
