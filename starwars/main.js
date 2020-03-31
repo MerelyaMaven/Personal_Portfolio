@@ -1,6 +1,6 @@
 import { people } from '../data/people.js'
 
-const greetingDiv = document.querySelector('.greeting')
+const gallery = document.querySelector('.gallery')
 const maleButton = document.querySelector('#maleButton')
 const femaleButton = document.querySelector('#femaleButton')
 const nonbianaryButton = document.querySelector('#nonbianaryButton')
@@ -11,7 +11,6 @@ const nonbianaryCharacters = people.filter(person => {
     || person.gender === "none")
     return person
 })
-//console.log(nonbianaryCharacters)
 
 maleButton.addEventListener("click", (event) =>{
     populateDom(people.filter(person => person.gender === "male"))
@@ -35,10 +34,16 @@ function getCharNumber(url) {
       return url.slice(start, end)
    
 }
-//getCharNumber("https://swapi.co/api/people/1/")
+
+function removeChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
 
 function populateDom(characters) {
-characters.forEach(person => {
+    removeChildren(gallery)
+    characters.forEach(person => {
     
     let charNum = getCharNumber(person.url)
 
@@ -60,7 +65,7 @@ characters.forEach(person => {
         console.log("It worked")
     })
     anchorWrap.appendChild(imageItem)
-    greetingDiv.appendChild(anchorWrap)
+    gallery.appendChild(anchorWrap)
     
 });
 }
