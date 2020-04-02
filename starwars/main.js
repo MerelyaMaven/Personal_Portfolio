@@ -1,4 +1,6 @@
 import { people } from '../data/people.js'
+import { getLastNumber, removeChildren } from '../utils.js'
+
 
 const gallery = document.querySelector('.gallery')
 const maleButton = document.querySelector('#maleButton')
@@ -24,28 +26,12 @@ nonbianaryButton.addEventListener("click", (event) =>{
     populateDom(nonbianaryCharacters)
 } )
 
-function getCharNumber(url) {
-    let end = url.lastIndexOf('/')
-    let start = end - 2
-      
-   if(url.charAt(start) === '/'){
-      start++ 
-   }
-      return url.slice(start, end)
-   
-}
-
-function removeChildren(element) {
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
-}
 
 function populateDom(characters) {
     removeChildren(gallery)
     characters.forEach(person => {
     
-    let charNum = getCharNumber(person.url)
+    let charNum = getLastNumber(person.url)
 
     let anchorWrap = document.createElement("a")
     anchorWrap.href = "#"

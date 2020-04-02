@@ -1,4 +1,4 @@
-export const representatives [
+export const representative = [
     {
         "id": "A000374",
         "title": "Representative",
