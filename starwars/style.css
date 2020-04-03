@@ -34,7 +34,7 @@ a > img {
     height: 18rem;
     margin: 10px;
     border-radius: 5px;
-    filter: drop-shadow(3px 3px 6px rgb(255,215,0,0.3));
+    filter: drop-shadow(4px 4px 6px rgb(255,215,0,0.3));
 }
 
 button {
