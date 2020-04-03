@@ -1,10 +1,20 @@
+@font-face {
+    font-family: 'distant_galaxyregular';
+    src: url('../data/fonts/distgrg_-webfont.woff2') format('woff2'),
+         url('../data/fonts/distgrg_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 :root {
     box-sizing: border-box;
 }
-header, footer {
+header {
+    font-family: 'distant_galaxyregular';
+    color: gold;
     display: flex;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 a {

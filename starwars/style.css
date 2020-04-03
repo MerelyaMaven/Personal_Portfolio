@@ -1,16 +1,47 @@
+@font-face {
+    font-family: 'distant_galaxyregular';
+    src: url('../data/fonts/distgrg_-webfont.woff2') format('woff2'),
+         url('../data/fonts/distgrg_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 :root {
     box-sizing: border-box;
+    
 }
-body {background-color: lightgrey;}
+header {
+    font-family: 'distant_galaxyregular';
+    color: gold;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+}
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+body {background-color: black;}
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 10px;
+
+}
 a > img {
     height: 18rem;
-    margin: 4px;
+    margin: 10px;
+    border-radius: 5px;
+    filter: drop-shadow(3px 3px 6px rgb(255,215,0,0.3));
 }
 
 button {
     font-size: 2rem;
-    background-color: lightslategrey;
+    background-color: gold;
     border-radius: 10px;
+    width: 20rem;
     padding: 5px;
+    margin: 10px;
 }
