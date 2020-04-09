@@ -40,5 +40,24 @@ const senatorNames = senators.map(senator => {
 })
 
 //https://www.govtrack.us/static/legislator-photos/300002-200px.jpeg
+const republicans = filterSenators('party', 'R')
+const democrats = filterSenators('party', 'D')
 
-populateSenatorDiv() 
+const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
+
+const missedVotes = getSimplifiedSenators(senators).reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
+
+let loyalArray = []
+
+const mostLoyal = getSimplifiedSenators(republicans).reduce((acc, senator) => {
+    if (senator.loyaltyPct === 100) {
+        loyalArray.push(senator)
+
+}
+return DeviceAcceleration.loayaltyPct . senator.loyaltyPct ? acc : senator
+})
+console.log(mostSeniority)
+console.log(loyalArray)
+
+populateSenatorDiv(getSimplifiedSenators(republicans))
+populateSenatorDiv(getSimplifiedSenators(senators))
