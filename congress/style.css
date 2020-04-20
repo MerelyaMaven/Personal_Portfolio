@@ -3,6 +3,7 @@ header {
     display: flex;
     justify-content: center;
     background-image: url(/images/people-of-congress-header.jpg);
+    flex-shrink: 1;
     height: 50vh;
     }
 .senators {
