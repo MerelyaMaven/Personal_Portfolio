@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="decaldrama.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
+
+<meta charset="UTF-8">
+<title>Decal Drama - Vinyl Decals for Every Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, ,max-scale=1">
+</head>
+
+<body>
+    <div id="wrapper">
+<!--Start of the header-->
+<header>
+<h1>Decal Drama</h1>
+    <h2>Your Decal Geeks and Graphic Gurus</h2>
+    
+    
+</header>
+<!--Start of the Navigation-->
+ <nav>
+     <ul class="menu">
+     <li><a href="index.html">About</a></li>
+      <li><a href="featured.html">Featured Items</a></li>
+         <li><a href="collection.html">Collections</a></li>
+         <li><a href="Gallery.html">Gallery</a></li>
+        <li class="active"><a href="CustomOrder.html">Custom Request</a></li>
+         <li><a href="map.html">Location</a></li>
+         
+     </ul>
+<div class="keepopen"></div>
+</nav>
+
+<!--Start of the Content-->
+<main>
+    <h1>Custom Requests</h1>
+    
+    <form action="FormToEmail.php" method="post" enctype="multipart/form-data" name="customrequest" class="custom">
+    
+    <fieldset>
+        
+        <legend>Introduce Yourself</legend>
+        
+        <label>
+            <span>Name:</span><input type="text" name="name" placeholder="full name" required class="userinfo">
+        </label>
+        
+        <label>
+            <span>Shipping Address:</span><input type="text" name="shippingaddress" placeholder="address" required class="userinfo">
+        </label>
+         
+        <label>
+            <span>Email:</span><input type="email" name="email" placeholder="johnsmith@youremail.com" required class="userinfo">
+        </label>
+        
+         <label>
+            <span>Phone:</span><input type="tel" name="phone" placeholder="123-456-7890" required pattern="[0-9-. ()]{10,14}" class="userinfo" >
+        </label>
+        
+        </fieldset>
+    
+        <fieldset>
+        
+        <legend>Custom Options</legend>
+        
+        
+            <label>
+            <span>Placement Location Size (in inches)</span><input type="text" name="locationsize" placeholder="5x6 " required class="userinfo">
+        </label>
+            
+        <label>
+        <span>Decal Size (in inches)</span><input type="text" name="decalsize" placeholder="5x6 " required class="userinfo">
+        </label>
+        
+            
+        <span>Font Style</span>
+            <label><input type="checkbox" name="serif" value="serif">Serif</label><br>
+            <label><input type="checkbox" name="sanserif" value="san Serif">San-Serif</label><br>
+            <label><input type="checkbox" name="script" value="script">Script</label><br>
+            <label><input type="checkbox" name="handlettered" value="handlettered">Hand-lettered</label>
+    
+        <label><span>Vinyl Color</span>
+            <select name="vinylcolor" class="userinfo">
+                <option value="cred">Cardinal Red</option>
+                <option value="tred">Tomato Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="spink">Soft Pink</option>
+                <option value="blush">Blush</option>
+                <option value="green">Green</option>
+                <option value="fgreen">Forest Green</option>
+                <option value="skyblue">Sky Blue</option>
+                <option value="olympicblue">Olympic Blue</option>
+                <option value="intenseblue">Intense Blue</option>
+                <option value="navyblue">Navy Blue</option>
+                <option value="orange">Bright Orange</option>
+                <option value="purple">Purple</option>
+                <option value="burgundy">Burgundy</option>
+                <option value="gold">Gold</option>
+                <option value="silver">Silver</option>
+                <option value="brown">Chocolate</option>
+                <option value="biege">Biege</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+             </select>   
+            
+        </label>
+        <span>Reverse Application</span>   
+            <label><input type="radio" name="reverse" value="yes">Yes</label><br>
+            <label><input type="radio" name="reverse" value="No">No</label><br>
+               
+            
+        </fieldset>
+    
+        <fieldset>
+        
+        <legend>Additional Requests</legend>
+        
+            <textarea name="comments" class="userinfo">Please make additional requests below</textarea>
+        
+       
+        
+        </fieldset>
+        
+        <input type="submit" name="submit" value="POST MY REQUEST" class="userbutton" >
+        
+        <input type="hidden" name="subject" value="Custom Request">
+        <input type="hidden" name="redirect" value="thanks.html">
+        
+        
+    </form>
+    
+  
+</main>
+    
+
+<!--Start of Footer-->
+    <footer>
+        <p>&copy; 2017 &bull; Decal Drama &bull; Built by Tressa Hopkinson</p>
+    
+</footer>
+        </div> <!--End of wrapper-->
+</body>
+</html>

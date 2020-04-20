@@ -1,0 +1,431 @@
+/* CSS reset */
+body, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+/* Box Model Fix Here*/
+*{ -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*---BODY---*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color:#585858;
+    background-color: white;
+    background-image: url(images/background-gradiant.gif);
+    background-repeat: repeat-x;
+    font-size: 16px;
+}
+
+/*---WRAPPER---*/
+
+div#wrapper{
+    margin: 0 auto;
+    max-width: 960px;
+    box-shadow: 0 0 10px #777;
+
+
+
+}
+
+
+
+
+/*---HEADER---*/
+/*----Phone Nav rules here---*/
+
+@media only screen and (max-width: 800px){
+header {
+    background-color: rgb(242,243,244);
+    background-image: url(images/DD_Facebook_Profile.jpg);
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    background-position: 2% 0rem;
+    
+
+}
+header h1 {
+    color: #a81f29;
+    padding: 1rem 0 0 8rem;
+    font-size: 2.9rem;
+    margin-bottom: 0;
+    text-shadow: 2px 1px 5px #000;
+
+    
+}
+header h2 {
+    color: #a81f29;
+    padding-left: 8rem;
+    font-size: 1rem;
+    
+}
+}
+
+
+/*---Desktop HEADER rules here---*/
+
+@media only screen and (min-width: 801px){
+header {
+    background-color: rgb(242,243,244);
+    background-image: url(images/DD_Facebook_Profile.jpg);
+    background-size: 140px;
+    background-repeat: no-repeat;
+
+    background-position: 2% 0rem;
+    
+    
+
+}
+header h1 {
+    color: #a81f29;
+    padding: 1rem 0 0 11rem;
+    font-size: 4rem;
+    margin-bottom: 0;
+    text-shadow: 2px 1px 5px #000;
+    
+    
+}
+header h2 {
+    color: #a81f29;
+    padding-left: 11rem;
+    font-size: 1.9rem;
+    
+}
+}
+
+/*----Phone Nav rules here---*/
+
+@media only screen and (max-width: 800px){
+    nav {
+        background-color: rgb(242,243,244);
+        padding: .5em 2%;
+     }
+    
+
+
+    nav ul.menu {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    nav ul.menu li a {
+        border: solid 1px #585858;
+        display: block;
+        padding: .5rem 2%;
+        background-color: #585858;
+        margin-bottom: .5rem;
+        border-radius: 30px;
+        color: #f2f3f4;
+        font-weight: 500;
+        text-decoration: none
+    }
+
+    nav ul.menu li.active a {
+        background-color: #d8d8d8;
+        color: rgb(088,088,088);
+    }
+    
+    nav ul.menu li a:hover {
+        border: solid 1px #585858;
+        background-color: #f2f3f4;
+        color: #585858;
+        
+}
+    
+    
+    
+    
+    
+    
+    
+}
+
+/*---End of Phone---*/
+
+/*---Desktop nav rules here---*/
+
+@media only screen and (min-width: 801px) {
+
+
+nav {
+    background-color: rgb(088,088,088);
+    background: linear-gradient(to bottom, #777 0%, #333 100%);
+    
+}
+nav ul.menu li{
+    float:left;
+    list-style-type: none;
+
+}
+nav ul.menu li a {
+    display:block;
+    padding: 10px 20px;
+    color: #f2f3f4;
+    text-decoration: none;
+    border-left: solid 2px #f2f3f4;
+    background-color: rgb(088,088,088);
+    
+}
+
+nav ul.menu li a:hover {
+    background-color: #f2f3f4;
+    color: #585858;
+}
+
+nav ul.menu li.active a {
+    background-color: #d8d8d8;
+    color: rgb(088,088,088);
+}
+}
+/*---End of Desktop---*/
+
+/*---MAIN---*/
+main {
+    padding: .5rem 2%;
+    background-color: white;
+    
+}
+main h1 {
+    font-size: 2.5rem;
+    color: #585858;
+    margin-bottom: .4rem;
+    
+  
+}
+main h2 {
+    font-size: 1.75rem;
+    color: #585858;
+    margin: .2rem;
+    
+}
+main p {
+    padding: .8rem;
+    padding-bottom: .8rem;
+    line-height: 150%;
+}
+main blockquote {
+    font-style: italic;
+    margin: 1.2rem 12%;
+    font-size: 1.4rem;
+    text-align: center;
+}
+main a {
+    color: #a81f29;
+    text-decoration: none;
+}
+main a:hover {
+    color: rgb(001,000,102);
+}
+
+
+/*----LISTS---*/
+main ul.square, main ol.checks {
+    margin: 0 0 1rem 0;
+    padding: 0 0 0 2rem;
+    
+}
+main ul.square {
+    list-style-image: url(images/bullet-square.gif)
+    
+}
+main ol.checks {
+  list-style-image: url(images/bullet-arrow.gif)
+   
+}
+main dl {
+    border: solid 1.5px #f2f3f4;
+    border-radius: 10px;
+    background-color: #f2f3f4;
+    padding:.5rem .5rem 1rem .5rem;
+}
+main dl dt {
+    margin: 0;
+    font-weight: 600;
+    padding: .5rem .5rem 0 .5rem;
+}
+main dl dd {
+    margin: 0;
+    padding: 0 4rem 0 2rem;
+    font-style: italic;
+    
+}
+
+/*---STYLING IMAGES---*/
+
+figure.myPhoto {
+    margin: 0 0 2% 2%;
+    padding: .5em;
+    float: right;
+    border: 1px solid white;
+    width: 60%;
+         box-shadow: 2px 1px 15px #000;
+}
+figure.myPhoto img {
+    width: 100%
+}
+
+figure.listing {
+    margin: 0 0 2% 2%;
+    padding: .5em;
+    float: right;
+    border: 1px solid white;
+    width: 50%;
+         box-shadow: 2px 1px 15px #000;
+}
+figure.listing img {
+    width: 100%
+}
+
+figure.myGallery {
+    
+    float: left;
+    margin: 0 0 2% 2%;
+    padding: 5px;
+    border: 2px solid #585858;
+    height:355px;
+    width: 300px;
+    text-align: left;
+}
+figure.myGallery img {
+    width: 100%
+}
+figure.myGallery figcaption {
+    font-size: .8rem;
+}
+
+figure.myGallery figcaption span {
+    display: block;
+    font-weight: bold;
+    font-size: .9rem;
+    color: rgb(001,000,102);
+    text-align: center;
+}
+
+
+/*---FORM STYLYING---*/
+
+
+form.custom fieldset {
+   margin-bottom: 2rem;
+    border-radius: .1rem;
+    border: hidden;
+    background: #f2f3f4;
+    font-size: .8rem;
+    color: #585858;
+}
+
+form.custom legend {
+    font-weight: 500;
+    margin-left: 1rem;
+    color: #585858;
+    font-size: 16px;
+    
+    
+    
+}
+
+form.custom span {
+    display: block;
+    padding: .8rem 0 0 .3rem;
+    
+}
+
+
+form.custom .userinfo {
+  color:#010066;
+    width: 50%;
+    padding: .4rem;
+    border-radius: .1rem;
+    border: hidden;
+    background: white;
+        
+}
+
+form.custom .userbutton {
+    color: white;
+    width: 15rem;
+    padding: .8rem;
+    margin-left:2%;
+    background: #010066;
+    border: solid 3px #f2f3f4;
+    
+   
+        
+}
+/*---IFRAME---*/
+
+.map {
+    width: 90%;
+    height: 20rem;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 2.5%
+    
+}
+
+.video {
+    width: 90%;
+    height: 20rem;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 2.5%
+    
+}
+
+
+/*---TABLES---*/
+
+table.pricing {
+    border-collapse: collapse;
+    font-size: .8rem;
+    
+    margin: 0 1% 1rem 1%;
+    width: 100%;
+    float: right;
+    
+    
+}
+table.pricing th {
+    text-align: left;
+    background-color: #010066;
+    color: #f2f3f4;
+    font-size: 1.25rem;
+    padding: .1rem .5rem;
+    
+}
+table.pricing td {
+    padding: .5rem;
+    
+}
+table.pricing tr:nth-child(even) {
+    background-color: #f2f3f4;
+    
+} 
+table.pricing tr:hover {
+    background-color: #d8d8d8;
+    color: #a81f29;
+}
+
+/*---FOOTER---*/
+footer {
+    background-color: #585858;
+    
+}
+footer p {
+    color: #f2f3f4;
+    text-align: center;
+    padding: .5rem;
+    font-size: 80%;
+    font-weight: 500;
+}
+/*---OTHER---*/
+
+.keepopen {
+    clear: both;
+}
+

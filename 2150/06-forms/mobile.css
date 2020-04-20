@@ -1,0 +1,294 @@
+/* CSS reset */
+body, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+/* Box Model Fix Here*/
+*{ -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*---BODY---*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color:#585858;
+    background-color: white;
+    font-size: 16px;
+}
+/*---HEADER---*/
+header {
+    background-color: rgb(242,243,244);
+
+}
+header h1 {
+    color: #a81f29;
+    padding: 1rem 0 0 4%;
+    font-size: 4rem;
+    
+}
+header h2 {
+    color: #a81f29;
+    padding-left: 4%;
+    font-size: 1.9rem;
+    
+}
+
+/*----Phone Nav rules here---*/
+
+@media only screen and (max-width: 600px){
+    nav {
+        background color: #f2f3f4;
+        padding: .5em 2%;
+     }
+    
+
+
+    nav ul.menu {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    nav ul.menu li a {
+        border: solid 1 px #585858;
+        display: block;
+        padding: .5rem 2%;
+        background-color: red;
+        margin-bottom: .5rem;
+        border-radius: 30px;
+        color: white;
+        font-weight: 500;
+        text-decoration: none
+    }
+
+    nave ul.menu li.active a {background-color: purple;}
+
+    nave ul.menu li a:hover {background-color: yellow}
+    
+    
+    
+    
+    
+    
+    
+}
+
+/*---End of Phone---*/
+
+/*---Desktop nav rules here---*/
+
+@media only screen and (min-width:601px) {
+
+
+nav {
+    background-color: rgb(088,088,088);
+    
+}
+nav ul.menu li{
+    float:left;
+    list-style-type: none;
+
+}
+nav ul.menu li a {
+    display:block;
+    padding: 10px 20px;
+    color: #f2f3f4;
+    text-decoration: none;
+    border-left: solid 2px #f2f3f4;
+    
+}
+
+nav ul.menu li a:hover {
+    background-color: #f2f3f4;
+    color: #585858;
+}
+
+nav ul.menu li.active a {
+    background-color: #d8d8d8;
+    color: rgb(088,088,088);
+}
+}
+/*---End of Desktop---*/
+
+/*---MAIN---*/
+main {
+    padding: .5rem 2%;
+    background-color: white;
+    
+}
+main h1 {
+    font-size: 2.5rem;
+    color: #585858;
+    
+    margin-bottom: .4rem
+}
+main h2 {
+    font-size: 1.75rem;
+    color: #585858;
+    margin: .2rem;
+    
+}
+main p {
+    padding: .8rem;
+    padding-bottom: .8rem;
+    line-height: 150%;
+}
+main blockquote {
+    font-style: italic;
+    margin: 1.2rem 12%;
+    font-size: 1.4rem;
+    text-align: center;
+}
+main a {
+    color: #a81f29;
+    text-decoration: none;
+}
+main a:hover {
+    color: rgb(001,000,102);
+}
+
+
+/*----LISTS---*/
+main ul.square, main ol.checks {
+    margin: 0 0 1rem 0;
+    padding: 0 0 0 2rem;
+    
+}
+main ul.square {
+    list-style-type: square;
+}
+main ol.checks {
+    list-style-type: circle;
+    
+}
+main dl {
+    border: solid 1.5px #f2f3f4;
+    border-radius: 10px;
+    background-color: #f2f3f4;
+    padding:.5rem .5rem 1rem .5rem;
+}
+main dl dt {
+    margin: 0;
+    font-weight: 600;
+    padding: .5rem .5rem 0 .5rem;
+}
+main dl dd {
+    margin: 0;
+    padding: 0 4rem 0 2rem;
+    font-style: italic;
+    
+}
+
+/*---STYLING IMAGES---*/
+
+figure.myPhoto {
+    margin: 0 0 2% 2%;
+    padding: .5em;
+    float: right;
+    border: 1px solid white;
+    width: 60%
+}
+figure.myPhoto img {
+    width: 100%
+}
+
+figure.myGallery {
+    
+    float: left;
+    margin: 0 0 2% 2%;
+    padding: 5px;
+    border: 2px solid #585858;
+    height:355px;
+    width: 300px;
+    text-align: left;
+}
+figure.myGallery img {
+    width: 100%
+}
+figure.myGallery figcaption {
+    font-size: .8rem;
+}
+
+figure.myGallery figcaption span {
+    display: block;
+    font-weight: bold;
+    font-size: .9rem;
+    color: rgb(001,000,102);
+    text-align: center;
+}
+
+
+/*---FORM STYLYING---*/
+
+
+form.custom fieldset {
+   margin-bottom: 2rem;
+    border-radius: .1rem;
+    border: hidden;
+    background: #f2f3f4;
+    font-size: .8rem;
+    color: #585858;
+}
+
+form.custom legend {
+    font-weight: 500;
+    margin-left: 1rem;
+    color: #585858;
+    font-size: 16px;
+    
+    
+    
+}
+
+form.custom span {
+    display: block;
+    padding: .8rem 0 0 .3rem;
+    
+}
+
+
+form.custom .userinfo {
+  color:#010066;
+    width: 50%;
+    padding: .4rem;
+    border-radius: .1rem;
+    border: hidden;
+    background: white;
+        
+}
+
+form.custom .userbutton {
+    color: white;
+    width: 15rem;
+    padding: .8rem;
+    margin-left:2%;
+    background: #010066;
+    border: solid 3px #f2f3f4;
+    
+   
+        
+}
+
+
+
+
+/*---FOOTER---*/
+footer {
+    background-color: #585858;
+    
+}
+footer p {
+    color: #f2f3f4;
+    text-align: center;
+    padding: .5rem;
+    font-size: 80%;
+    font-weight: 500;
+}
+/*---OTHER---*/
+
+.keepopen {
+    clear: both;
+}
+
