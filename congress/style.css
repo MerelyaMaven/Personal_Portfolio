@@ -9,10 +9,18 @@ header {
   background-size: cover;
     height: 100vh;
     }
+h1 {
+    font-size: 4rem;
+    padding-top: 15rem;
+    color: goldenrod;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    }
 
 .senators {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.1);
    } 
 figure {
