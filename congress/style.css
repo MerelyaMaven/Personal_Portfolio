@@ -3,13 +3,18 @@ header {
     display: flex;
     justify-content: center;
     background-image: url(/images/people-of-congress-header.jpg);
-    flex-shrink: 1;
-    height: 50vh;
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    height: 100vh;
     }
+
 .senators {
     display: flex;
     flex-wrap: wrap;
-} 
+    background: rgba(255, 255, 255, 0.1);
+   } 
 figure {
     background-color: blue;
     padding: 1rem;
