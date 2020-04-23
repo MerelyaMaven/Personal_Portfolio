@@ -1,6 +1,12 @@
 import { senators } from '../data/senators.js'
+import {removeChildren } from '../utils.js'
 
 const senatorDiv = document.querySelector('.senators')
+const seniorityButton = document.querySelector('#seniorityButton')
+
+seniorityButton.addEventListener('click', () => {
+birthdaySort()
+})
 
 function getSimplifiedSenators(senatorArray) {
     return senatorArray.map(senator => {
@@ -10,11 +16,12 @@ function getSimplifiedSenators(senatorArray) {
         name: `${senator.first_name}${middleName}${senator.last_name}`,
         imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
         seniority: parseInt(senator.seniority, 10)
+        date_of_birth: parseInt(senator.date_of_birth, 10)
     }
 })
 }
 function populateSenatorDiv(simpleSenators) {
-    console.log(simpleSenators)
+    removeChildren
     simpleSenators.forEach(senator => {
         let senDiv = document.createElement('div')
         let senFigure = document.createElement('figure')
@@ -52,7 +59,19 @@ const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => a
 
 const missedVotes = getSimplifiedSenators(senators).reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
 
-console.log(mostSeniority)
 
+//Sort by value
+function senioritySort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort(function (a, b,) {
+    return parseInt(a.seniority) - parseInt(b.seniority)
+})
+    )}
 
+//birthday sort
+function birthdaySort () {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort(function (a, b,) {
+    return parseInt(a.date_of_birth) - parseInt(b.date_of_birth)
+})
+    )}
+    //by default on page load, wes show all senators unsorted
 populateSenatorDiv(getSimplifiedSenators(senators))
