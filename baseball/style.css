@@ -60,8 +60,11 @@ header {
     background: rgb(240, 219, 165);
     border: 5px solid rgb(110, 164, 187);
     transform: rotateY(180deg);
+    color: rgb(70, 70, 70);
+    
   }
   
   li {
     text-align: left;
   }
+  
