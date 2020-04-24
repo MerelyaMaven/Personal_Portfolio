@@ -8,6 +8,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     background-color: black;
     color: rgb(240, 219, 165);
     position: fixed;
@@ -73,6 +74,14 @@ header {
     font-size: 25px;
     margin-top: 10px;
   }
+  h3 {
+    background-color: rgb(17, 81, 140);
+    border-top: 1.5px solid rgb(255, 203, 5);
+    border-bottom: 1.5px solid rgb(255, 203, 5);
+    height: 30px;
+    color: rgb(255, 203, 5);
+    vertical-align: middle;
+  }
   
   .pokemonGrid {
     display: flex;
@@ -117,14 +126,14 @@ header {
   }
   
   .card__face--front {
-    border: 5px solid rgb(17, 151, 209);
+    border: 5px solid rgb(42, 117, 187);
    
     background-image: url(/images/cardtexture.jpg);
    }
   
   .card__face--back {
     background: black;
-    border: 5px solid rgb(17, 151, 209);
+    border: 5px solid rgb(42, 117, 187);
     transform: rotateY(180deg);
     color: rgb(231, 231, 231);
     
