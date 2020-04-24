@@ -8,6 +8,7 @@ header {
   body {
     
     font-family: sans-serif;
+    background-image: url(/images/pokemon_background.jpeg);
     background: rgb(70, 70, 70);
   }
   
@@ -20,7 +21,7 @@ header {
   .scene {
     width: 200px;
     height: 260px;
-    background-color: rgb(60, 60, 60);
+    background-color: rgb(60, 60, 60, .3);
     margin: 10px;
     perspective: 600px;
     border-radius: 10px;
@@ -51,13 +52,13 @@ header {
   }
   
   .card__face--front {
-    border: 8px solid rgb(110, 164, 187);
+    border: 5px solid rgb(110, 164, 187);
     background-color: rgb(100, 100, 100);
    }
   
   .card__face--back {
     background: rgb(240, 219, 165);
-    border: 8px solid rgb(110, 164, 187);
+    border: 5px solid rgb(110, 164, 187);
     transform: rotateY(180deg);
   }
   
