@@ -11,9 +11,9 @@ async function getAPIData(url) {
 
 //now, use the async getAPIData function
 function loadPage() {
-getAPIData('https://pokeapi.co/api/v2/pokemon?offset=5&limit=50"').then((data) => {
+getAPIData('https://pokeapi.co/api/v2/pokemon?offset=5&limit=50"').then(async (data) => {
 	for (const pokemon of data.results) {
-		getAPIData(pokemon.url).then((pokeData) => {
+		await getAPIData(pokemon.url).then((pokeData) => {
 			populatePokeCard(pokeData)
 		})
 	}
@@ -22,6 +22,8 @@ getAPIData('https://pokeapi.co/api/v2/pokemon?offset=5&limit=50"').then((data) =
 let pokemonGrid = document.querySelector('.pokemonGrid')
 let startButton = document.querySelector('#startButton')
 let newButton = document.querySelector('#newButton')
+//let logoImage = document.createElement('img')
+	//logoImage.src = '/images/pokemonlogo.png'
 
 startButton.addEventListener('click', () => {
 	loadPage(
@@ -52,10 +54,12 @@ function populatePokeCard(singlePokemon) {
 function populateCardFront(pokemon) {
 	let cardFront = document.createElement('div')
 	cardFront.className = 'card__face card__face--front'
-	cardFront.textContent = pokemon.name
 	let frontImage = document.createElement('img')
 	frontImage.src = `/images/${getImageFileName(pokemon)}.png`
+	let frontLabel = document.createElement('p')
+	frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}`
 	cardFront.appendChild(frontImage)
+	cardFront.appendChild(frontLabel)
 	return cardFront
   }
 
@@ -73,14 +77,27 @@ function populateCardFront(pokemon) {
   function populateCardBack(pokemon) {
 	let cardBack = document.createElement('div')
 	cardBack.className = 'card__face card__face--back'
-	cardBack.textContent = 'Abilities'
+	let backLabel = document.createElement('h2')
+	backLabel.textContent = 'PokePowers'
+	let heightLabel = document.createElement('p')
+	heightLabel.textContent = `Height: ${pokemon.height}`
+	let weightLabel = document.createElement('p')
+	weightLabel.textContent = `Weight: ${pokemon.weight}`
+	let abilityLabel = document.createElement('p')
+	abilityLabel.textContent = 'Abilities'
 	let abilityList = document.createElement('ul')
 	pokemon.abilities.forEach(ability => {
 	  let abilityName = document.createElement('li')
 	  abilityName.textContent = ability.ability.name
 	  abilityList.appendChild(abilityName)
 	  })
+
+	cardBack.appendChild(backLabel)
+	cardBack.appendChild(heightLabel)
+	cardBack.appendChild(weightLabel)
+	cardBack.appendChild(abilityLabel)
 	cardBack.appendChild(abilityList)
+	
 	return cardBack
   }
   
