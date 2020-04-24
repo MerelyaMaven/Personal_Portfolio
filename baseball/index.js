@@ -79,13 +79,14 @@ function populateCardFront(pokemon) {
 	cardBack.className = 'card__face card__face--back'
 	let backLabel = document.createElement('h2')
 	backLabel.textContent = 'PokePowers'
+	let idLabel = document.createElement('h1')
+	idLabel.textContent = pokemon.id
 	let heightLabel = document.createElement('p')
 	heightLabel.textContent = `Height: ${pokemon.height}`
 	let weightLabel = document.createElement('p')
 	weightLabel.textContent = `Weight: ${pokemon.weight}`
-	let abilityLabel = document.createElement('p')
-	abilityLabel.textContent = 'Abilities'
 	let abilityList = document.createElement('ul')
+	abilityList.textContent = 'Abilities'
 	pokemon.abilities.forEach(ability => {
 	  let abilityName = document.createElement('li')
 	  abilityName.textContent = ability.ability.name
@@ -93,9 +94,10 @@ function populateCardFront(pokemon) {
 	  })
 
 	cardBack.appendChild(backLabel)
+	cardBack.appendChild(idLabel)
 	cardBack.appendChild(heightLabel)
 	cardBack.appendChild(weightLabel)
-	cardBack.appendChild(abilityLabel)
+	
 	cardBack.appendChild(abilityList)
 	
 	return cardBack

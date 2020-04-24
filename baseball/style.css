@@ -57,8 +57,22 @@ header {
     p {
       text-align: left;
       margin-left: 20px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
+
+  h1 {
+    color: rgb(255, 203, 5);
+    font-size: 35px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    color: rgb(255, 203, 5);
+    font-family: serif;
+    font-size: 25px;
+    margin-top: 10px;
+  }
   
   .pokemonGrid {
     display: flex;
@@ -116,15 +130,20 @@ header {
     
   }
   ul {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: left;
   }
   
   li {
     text-align: left;
+    margin-top: 5px;
     margin-left: 40px;
     list-style: georgian inside url('/images/pokeball.png');
   }
   img {
     margin: 20px;
   }
+
+  
   
