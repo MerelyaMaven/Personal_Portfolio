@@ -2,6 +2,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(192, 76, 75);
+    color: rgb(240, 219, 165);
+  }
+  body {
+    
+    font-family: sans-serif;
+    background: rgb(70, 70, 70);
   }
   
   .pokemonGrid {
@@ -13,10 +20,10 @@ header {
   .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid #CCC;
+    background-color: rgb(60, 60, 60);
     margin: 10px;
     perspective: 600px;
-    border-radius: 30px;
+    border-radius: 10px;
   }
   
   .card {
@@ -26,7 +33,7 @@ header {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-  }
+    }
   
   .card.is-flipped {
     transform: rotateY(180deg);
@@ -44,11 +51,13 @@ header {
   }
   
   .card__face--front {
-    background: red;
+    border: 8px solid rgb(110, 164, 187);
+    background-color: rgb(100, 100, 100);
    }
   
   .card__face--back {
-    background: blue;
+    background: rgb(240, 219, 165);
+    border: 8px solid rgb(110, 164, 187);
     transform: rotateY(180deg);
   }
   
