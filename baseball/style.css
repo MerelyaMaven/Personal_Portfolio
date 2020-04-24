@@ -4,18 +4,31 @@ header {
     align-items: center;
     background-color: rgb(192, 76, 75);
     color: rgb(240, 219, 165);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    margin: 0px;
   }
   body {
     
     font-family: sans-serif;
-    background-image: url(/images/pokemon_background.jpeg);
-    background: rgb(70, 70, 70);
-  }
+    display: flex;
+    justify-content: center;
+    background: url(/images/pokemon_background.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    }
   
   .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
+    top: 10rem;
+    
   }
   
   .scene {

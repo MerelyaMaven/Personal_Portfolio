@@ -10,6 +10,7 @@ async function getAPIData(url) {
 }
 
 //now, use the async getAPIData function
+function loadPage() {
 getAPIData('https://pokeapi.co/api/v2/pokemon?offset=5&limit=50"').then((data) => {
 	for (const pokemon of data.results) {
 		getAPIData(pokemon.url).then((pokeData) => {
@@ -17,11 +18,19 @@ getAPIData('https://pokeapi.co/api/v2/pokemon?offset=5&limit=50"').then((data) =
 		})
 	}
 })
-
+}
 let pokemonGrid = document.querySelector('.pokemonGrid')
+let startButton = document.querySelector('#startButton')
+let newButton = document.querySelector('#newButton')
 
-//getPokeData('https://pokeapi.co/api/v2/pokemon?offset=4&limit=50"')
-
+startButton.addEventListener('click', () => {
+	loadPage(
+	)
+})
+newButton.addEventListener('click', () => {
+	addPokemon(
+	)
+})
 
 
 function populatePokeCard(singlePokemon) {
@@ -45,10 +54,21 @@ function populateCardFront(pokemon) {
 	cardFront.className = 'card__face card__face--front'
 	cardFront.textContent = pokemon.name
 	let frontImage = document.createElement('img')
-	frontImage.src = `/images/${pokemon.id}.png`
+	frontImage.src = `/images/${getImageFileName(pokemon)}.png`
 	cardFront.appendChild(frontImage)
 	return cardFront
   }
+
+  function getImageFileName(pokemon) {
+	if (pokemon.id < 10) {
+	  return `00${pokemon.id}`
+	} else if (pokemon.id > 9 && pokemon.id < 100) {
+	  return `0${pokemon.id}`
+	} else if (pokemon.id > 809) {
+	  return `903`
+	}
+  }
+  
   
   function populateCardBack(pokemon) {
 	let cardBack = document.createElement('div')
@@ -68,3 +88,34 @@ function populateCardFront(pokemon) {
 
 
 
+  class Pokemon {
+	constructor(height, weight, name, abilities) {
+	  this.height = height
+	  this.weight = weight
+	  this.name = name
+	  this.abilities = abilities
+	  this.id = 900
+	}
+  }
+  
+  function addPokemon() {
+	let Aurora = new Pokemon(67, 135, 'aurora',
+	  [
+		{
+		  ability: {
+		  name: 'Invisibility'
+		  }
+		},
+		{
+		  ability: {
+		  name: 'Flight'
+		  }
+		},
+		{
+		  ability: {
+		  name: 'Nurture'
+		  }
+		}
+	])
+	populatePokeCard(Aurora)
+  }
