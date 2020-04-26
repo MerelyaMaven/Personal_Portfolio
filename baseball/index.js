@@ -158,4 +158,4 @@ function populateCardFront(pokemon) {
 	addPokemon(67, 135, 'merryweather', 'invisibility', 'flying', 'nurture'),
 	addPokemon(67, 135, 'merry', 'invisibility', 'flying', 'nurture')
   ]
-console.log(randomArray)
+//console.log(randomArray)
