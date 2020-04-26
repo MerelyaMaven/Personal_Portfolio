@@ -8,17 +8,20 @@ async function getAPIData(url) {
 			console.error(error)
 		}
 }
-
 //now, use the async getAPIData function
 function loadPage() {
 getAPIData('https://pokeapi.co/api/v2/pokemon?offset=5&limit=50"').then(async (data) => {
 	for (const pokemon of data.results) {
 		await getAPIData(pokemon.url).then((pokeData) => {
 			populatePokeCard(pokeData)
-		})
+			})
+		
 	}
+	
 })
 }
+
+
 let pokemonGrid = document.querySelector('.pokemonGrid')
 let startButton = document.querySelector('#startButton')
 let newButton = document.querySelector('#newButton')
@@ -29,9 +32,13 @@ startButton.addEventListener('click', () => {
 	loadPage(
 	)
 })
+let i=0
 newButton.addEventListener('click', () => {
-	addPokemon(
+		populatePokeCard(
+		randomArray[i]
 	)
+	i++
+	if (i > randomArray.length) i = 0
 })
 
 
@@ -69,7 +76,7 @@ function populateCardFront(pokemon) {
 	} else if (pokemon.id > 9 && pokemon.id < 100) {
 	  return `0${pokemon.id}`
 	} else if (pokemon.id > 809) {
-	  return `903`
+	  return pokemon.id
 	}
   }
   
@@ -103,38 +110,52 @@ function populateCardFront(pokemon) {
 	return cardBack
   }
   
-
-
-
-
+  
   class Pokemon {
-	constructor(height, weight, name, abilities) {
+	constructor(height, weight, name, abilities, id) {
 	  this.height = height
 	  this.weight = weight
 	  this.name = name
 	  this.abilities = abilities
-	  this.id = 900
+	  this.id = getRandomInt(900, 905)
 	}
   }
+
+  function getRandomInt(min, max) {
+	   min = Math.ceil(min);
+	   max = Math.floor(max);
+	   return Math.floor(Math.random() * (max - min + 1)) + min; 
+	}
+
+  let randomArray = []
   
-  function addPokemon() {
-	let Aurora = new Pokemon(67, 135, 'aurora',
+  function addPokemon(height, weight, name, ability1, ability2, ability3) {
+	let Aurora = new Pokemon(height, weight, name,
 	  [
 		{
 		  ability: {
-		  name: 'Invisibility'
+		  name: ability1
 		  }
 		},
 		{
 		  ability: {
-		  name: 'Flight'
+		  name: ability2
 		  }
 		},
 		{
 		  ability: {
-		  name: 'Nurture'
+		  name: ability3
 		  }
 		}
 	])
-	populatePokeCard(Aurora)
+	return Aurora
+	//populatePokeCard(Aurora)
   }
+  let anything = addPokemon(67, 135, 'arora', 'invisibility', 'flying', 'nurture')
+  randomArray = [
+	addPokemon(67, 135, 'arora', 'invisibility', 'flying', 'nurture'),
+	addPokemon(67, 135, 'flora', 'invisibility', 'flying', 'nurture'),
+	addPokemon(67, 135, 'merryweather', 'invisibility', 'flying', 'nurture'),
+	addPokemon(67, 135, 'merry', 'invisibility', 'flying', 'nurture')
+  ]
+console.log(randomArray)
