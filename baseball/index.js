@@ -1,3 +1,4 @@
+import { removeChildren } from '../utils.js'
 async function getAPIData(url) {
 	try {
 		const response = await fetch(url)
@@ -29,18 +30,28 @@ let newButton = document.querySelector('#newButton')
 	//logoImage.src = '/images/pokemonlogo.png'
 
 startButton.addEventListener('click', () => {
+	removeChildren(pokemonGrid)
 	loadPage(
 	)
 })
 //for loop
 let i=0
 newButton.addEventListener('click', () => {
-		populatePokeCard(
+	removeChildren(pokemonGrid)
+	let newCardCoords = populatePokeCard(
 		randomArray[i]
 	)
 	i++
 	if (i > randomArray.length) i = 0
-	
+	console.log(newCardCoords)
+	window.scrollTo({
+		top: newCardCoords.top,
+		left: newCardCoords.left,
+		behavior: 'smooth'
+	  });
+	loadPage(
+		
+	)
 })
 
 
@@ -58,6 +69,7 @@ function populatePokeCard(singlePokemon) {
 	pokeCard.appendChild(pokeBack)
 	pokeScene.appendChild(pokeCard)
 	pokemonGrid.appendChild(pokeScene)
+	return pokeScene.getBoundingClientRect()
 	
 	
 }
@@ -109,7 +121,6 @@ function populateCardFront(pokemon) {
 	cardBack.appendChild(idLabel)
 	cardBack.appendChild(heightLabel)
 	cardBack.appendChild(weightLabel)
-	
 	cardBack.appendChild(abilityList)
 	
 	return cardBack
