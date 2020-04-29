@@ -32,6 +32,7 @@ startButton.addEventListener('click', () => {
 	loadPage(
 	)
 })
+//for loop
 let i=0
 newButton.addEventListener('click', () => {
 		populatePokeCard(
@@ -39,6 +40,7 @@ newButton.addEventListener('click', () => {
 	)
 	i++
 	if (i > randomArray.length) i = 0
+	
 })
 
 
@@ -56,7 +58,10 @@ function populatePokeCard(singlePokemon) {
 	pokeCard.appendChild(pokeBack)
 	pokeScene.appendChild(pokeCard)
 	pokemonGrid.appendChild(pokeScene)
+	
+	
 }
+
 
 function populateCardFront(pokemon) {
 	let cardFront = document.createElement('div')
@@ -121,12 +126,14 @@ function populateCardFront(pokemon) {
 	}
   }
 
+  //Random interger between two values
   function getRandomInt(min, max) {
 	   min = Math.ceil(min);
 	   max = Math.floor(max);
 	   return Math.floor(Math.random() * (max - min + 1)) + min; 
 	}
 
+// Create random array for new card population	
   let randomArray = []
   
   function addPokemon(height, weight, name, ability1, ability2, ability3) {
@@ -149,13 +156,15 @@ function populateCardFront(pokemon) {
 		}
 	])
 	return Aurora
-	//populatePokeCard(Aurora)
+	
   }
-  let anything = addPokemon(67, 135, 'arora', 'invisibility', 'flying', 'nurture')
+  let anything = addPokemon()
   randomArray = [
-	addPokemon(67, 135, 'arora', 'invisibility', 'flying', 'nurture'),
-	addPokemon(67, 135, 'flora', 'invisibility', 'flying', 'nurture'),
-	addPokemon(67, 135, 'merryweather', 'invisibility', 'flying', 'nurture'),
-	addPokemon(67, 135, 'merry', 'invisibility', 'flying', 'nurture')
+	addPokemon(67, 135, 'arora', 'beauty', 'flying', 'kindness'),
+	addPokemon(52, 105, 'flora', 'transmutation', 'flying', 'sparkels'),
+	addPokemon(38, 84, 'merryweather', 'invisibility', 'flying', 'nurture'),
+	addPokemon(15, 35, 'fona', 'rhythm', 'flying', 'laughter'),
+	addPokemon(25, 55, 'lily', 'grace', 'flying', 'beauty'),
+	addPokemon(25, 55, 'evie', 'speed', 'flying', 'agility')
   ]
 //console.log(randomArray)
