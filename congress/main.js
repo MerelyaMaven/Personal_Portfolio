@@ -1,6 +1,8 @@
 import { senators } from '../data/senators.js'
+import { removeChildren } from '../utils.js'
 
 const senatorGrid = document.querySelector('.senatorGrid')
+
 
 function getSimplifiedSenators(senatorArray) {
     return senatorArray.map(senator => {
