@@ -10,6 +10,16 @@
 html {
     scroll-behavior: smooth;
 }
+h1 {
+    font-size: 45px;
+    text-align: center;
+   
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
 
 body {
     background-image: url(image/grey-header.jpg);
@@ -53,7 +63,14 @@ body {
     height: 100vh;
     /*background-color: rgb(90, 88, 88);*/
     color: whitesmoke;
+    padding-top: 5rem;
 }
+.bio {
+    
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
 .project-header {
     display: flex;
     justify-content: space-evenly;
@@ -131,6 +148,7 @@ footer {
     html {
         font-size: 60%;
     }
+    
 }
 /* 460px / 16px = 61.25em */
 @media (max-width: 61.25em) {
