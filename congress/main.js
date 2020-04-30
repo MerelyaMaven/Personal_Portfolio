@@ -4,10 +4,21 @@ import { removeChildren } from '../utils.js'
 const senatorGrid = document.querySelector('.senatorGrid')
 const seniorityButton = document.querySelector('#seniorityButton')
 const voteButton = document.querySelector('#voteButton')
-let republican = document.querySelector('#repuplican')
-let democrat = document.querySelector('#democrat')
-let independent = document.querySelector('#independent')
+const republican = document.querySelector('#republican')
+const democrat = document.querySelector('#democrat')
+const independent = document.querySelector('#independent')
 
+republican.addEventListener("click", () =>{
+    republicanFilter()
+})
+
+democrat.addEventListener("click", () =>{
+    democratFilter()
+})
+
+independent.addEventListener("click", () =>{
+    independentFilter()
+})
 
 AgeButton.addEventListener('click', () => {
     birthdaySort()
@@ -15,6 +26,9 @@ AgeButton.addEventListener('click', () => {
 
 seniorityButton.addEventListener('click', () => {
     senioritySort()
+})
+voteButton.addEventListener('click', () => {
+    voteSort()
 })
 
 
@@ -123,6 +137,30 @@ const mostLoyal = getSimplifiedSenators(republicans).reduce((acc, senator) => {
     return acc.loyaltyPct > senator.loyaltyPct ? acc : senator
 })
 
+// filter by republican
+function republicanFilter() {
+    populateSenatorDiv(getSimplifiedSenators(senators).filter(senator => {
+        return senator['party'] === 'R'
+    })
+    )
+}
+
+//filter by democrat
+function democratFilter() {
+    populateSenatorDiv(getSimplifiedSenators(senators).filter(senator => {
+        return senator['party'] === 'D'
+    })
+    )
+}
+
+//filter by independent
+function independentFilter() {
+    populateSenatorDiv(getSimplifiedSenators(senators).filter(senator => {
+        return senator['party'] === 'ID'
+    })
+    )
+}
+
 // sort by seniotity
 function senioritySort() {
     populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
@@ -144,6 +182,7 @@ function voteSort() {
     })
     )
 }
+
 
 
 
