@@ -117,4 +117,4 @@ async function getAPIData(url) {
     ])
     populatePokeCard(Thoremon)
   }
-  
+ 

@@ -9,6 +9,11 @@
 :root {
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     font-family: 'distant_galaxyregular';
     color: gold;
@@ -21,7 +26,12 @@ header {
 .main {
     justify-content: center;
     padding: 10rem;
+    z-index: 1;
     
+}
+
+body {
+    z-index: 1;
 }
 .box {
     font-family: 'distant_galaxyregular';
@@ -47,12 +57,14 @@ display: flex;
     border: solid 2px black;
     padding: 1rem;
 }
+
+img {
+    z-index: 5;
+}
 footer {
     color: gold;
     display: flex;
     justify-content: center;
     margin-top: 3rem;
-
-
 }
 
