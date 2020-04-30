@@ -2,6 +2,22 @@ import { senators } from '../data/senators.js'
 import { removeChildren } from '../utils.js'
 
 const senatorGrid = document.querySelector('.senatorGrid')
+const seniorityButton = document.querySelector('#seniorityButton')
+const voteButton = document.querySelector('#voteButton')
+let republican = document.querySelector('#repuplican')
+let democrat = document.querySelector('#democrat')
+let independent = document.querySelector('#independent')
+
+
+AgeButton.addEventListener('click', () => {
+    birthdaySort()
+})
+
+seniorityButton.addEventListener('click', () => {
+    senioritySort()
+})
+
+
 
 
 function getSimplifiedSenators(senatorArray) {
@@ -14,13 +30,14 @@ function getSimplifiedSenators(senatorArray) {
             seniority: parseInt(senator.seniority, 10),
             missedVotesPct: senator.missed_votes_pct,
             party: senator.party,
-            loyaltyPct: senator.votes_with_party_pct
+            loyaltyPct: senator.votes_with_party_pct,
+            date_of_birth: senator.date_of_birth
         }
     })
 }
 
 function populateSenatorDiv(simpleSenators) {
-    console.log(simpleSenators)
+    removeChildren(senatorGrid)
     simpleSenators.forEach(senator => {
         let senDiv = document.createElement('div')
         let senFigure = document.createElement('figure')
@@ -45,23 +62,29 @@ function populateSenatorDiv(simpleSenators) {
 function progressBars(senator) {
     let progressDiv = document.createElement('div')
     progressDiv.className = 'progressDiv'
+    
     let loyaltyLabel = document.createElement('label')
     loyaltyLabel.for = 'loyalty'
     loyaltyLabel.textContent = 'Loyalty'
+    
     let loyaltyBar = document.createElement('progress')
     loyaltyBar.id = 'loyalty'
     loyaltyBar.max = 100
     loyaltyBar.value = senator.loyaltyPct
+    
     let seniorityLabel = document.createElement('label')
     seniorityLabel.for = 'seniority'
     seniorityLabel.textContent = 'Seniority'
+    
     let seniorityBar = document.createElement('progress')
     seniorityBar.id = 'seniority'
     seniorityBar.max = 100
     seniorityBar.value = parseInt((senator.seniority / mostSeniority.seniority) * 100)
+    
     let votingLabel = document.createElement('label')
     votingLabel.for = 'voting'
     votingLabel.textContent = 'Vote'
+    
     let votingBar = document.createElement('progress')
     votingLabel.id = 'voting'
     votingBar.max = 100
@@ -85,6 +108,8 @@ const filterSenators = (prop, value) => {
 const republicans = filterSenators('party', 'R')
 const democrats = filterSenators('party', 'D')
 
+console.log(republicans)
+
 const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
 
 const missedVotes = getSimplifiedSenators(senators).reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
@@ -98,7 +123,30 @@ const mostLoyal = getSimplifiedSenators(republicans).reduce((acc, senator) => {
     return acc.loyaltyPct > senator.loyaltyPct ? acc : senator
 })
 
-//console.log(loyalArray)
+// sort by seniotity
+function senioritySort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
+        return parseInt(a.seniority) - parseInt(b.seniority)
+    })
+    )
+}
+// sort by age
+function birthdaySort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
+        return parseInt(a.date_of_birth) - parseInt(b.date_of_birth)
+    })
+    )
+}
+// sort by missed votes
+function voteSort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
+        return parseInt(a.missedVotesPct) - parseInt(b.missedVotesPct)
+    })
+    )
+}
 
+
+
+
+// by default on page load, we show all senators unsorted
 populateSenatorDiv(getSimplifiedSenators(senators))
-console.log(mostSeniority.seniority)
