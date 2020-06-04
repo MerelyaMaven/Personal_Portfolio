@@ -21,6 +21,9 @@ header {
     display: flex;
     justify-content: space-evenly;
 }
+.jedi {
+    height: 5rem;
+}
 body {background-color: black;}
 
 .gallery {
